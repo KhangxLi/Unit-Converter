@@ -24,7 +24,7 @@ def converting_cel():
     print("\n %s C is %s F and %s K" % (C, F, K))
     if C < -273.15:
         zero_note()
-    afterTemp()
+    afterTemp(converting_cel, 'celsius')
 
 def converting_fah():
     F = float(input("\n Enter your temperature: "))
@@ -33,7 +33,7 @@ def converting_fah():
     print("\n %s F is %s C and %s K" % (F, C, K))
     if F < -459.67:
         zero_note()
-    afterTemp()
+    afterTemp(converting_fah, 'fahrenheit')
 
 def converting_kel():
     K = float(input("\n Enter your temperature: "))
@@ -42,7 +42,7 @@ def converting_kel():
     print("\n %s K is %s C and %s K" % (K, C, F))
     if F < -459.67:
         zero_note()
-    afterTemp()
+    afterTemp(converting_kel, 'kelvin')
 
 def welcome():
     print("Welcome to our ORDINARY UNIT CONVERTER.")
@@ -51,12 +51,12 @@ def zero_note():
     time.sleep(1)
     print("\n Note however that -273.15 C, -459.67 F or 0 K is the absolute zero where atoms stop moving. It cannot get colder than that.")
     
-def afterTemp():
+def afterTemp(convert, unit):
     time.sleep(1)
-    print("\n 'a' for another celsius conversion \n 'b' for another temperature unit conversion \n 'c' for the main menu")
+    print("\n 'a' for another", unit,"conversion \n 'b' for another temperature unit conversion \n 'c' for the main menu")
     cmd = input("\n Select your next course of action: ")
     if cmd == 'a':
-        converting_cel()
+        convert
     if cmd == 'b':
         tempcon()
     if cmd == 'c':
