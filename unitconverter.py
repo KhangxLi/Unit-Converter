@@ -155,7 +155,7 @@ def converting_kel():
             K = float(input("\n Enter your temperature: "))
             C = round(K - 273.15, 3)
             F = round((C * 1.8) + 32, 3)
-            print("\n %s K is %s C and %s K" % (K, C, F))
+            print("\n %s K is %s C and %s F" % (K, C, F))
             if F < -459.67:
                 zero_note()
             afterConvert(converting_kel, tempconvert, 'kelvin', 'temperature')
